@@ -101,7 +101,7 @@ const SupplierProductEdit = ({ match }) => {
     return (
         <Container style={{ marginBottom: '50px' }}>
             <Meta
-                title="Agroic | Supplier Edit"
+                title="FarmConnect | Supplier Edit"
             />
             <FormContainer>
                 <h2 style={{ marginTop: '100px', textAlign: 'center' }}>Product Profile</h2>
@@ -127,10 +127,10 @@ const SupplierProductEdit = ({ match }) => {
                                 ></Form.Control>
                             </Form.Group>
                             <Form.Group controlId='email'>
-                                <Form.Label>Email Address / NIC <span style={{ color: 'red' }}>*</span></Form.Label>
+                                <Form.Label>Email Address<span style={{ color: 'red' }}>*</span></Form.Label>
                                 <Form.Control
                                     type="nic"
-                                    placeholder="Enter email or NIC"
+                                    placeholder="Enter email"
                                     value={email}
                                     required
                                     onChange={(e) => setEmail(e.target.value)}
@@ -148,10 +148,10 @@ const SupplierProductEdit = ({ match }) => {
                                 ></Form.Control>
                             </Form.Group>
                             <Form.Group controlId='cropSelection'>
-                                <Form.Label>Crop Selection <span style={{ color: 'red' }}>*</span></Form.Label>
+                                <Form.Label>Product Type <span style={{ color: 'red' }}>*</span></Form.Label>
                                 <Form.Control
                                     type="cropSelection"
-                                    placeholder="Enter crop selection"
+                                    placeholder="Enter crop or Animal or others"
                                     value={cropSelection}
                                     required
                                     onChange={(e) => setCropSelection(e.target.value)}

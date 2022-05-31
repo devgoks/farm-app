@@ -30,15 +30,15 @@ const createSupplierProduct = asyncHandler(async (req, res) => {
 
         let geoCoder = nodeGeocoder(options);
 
-        const getCordinates = geoCoder.geocode(address).then(
-            response => {
-                return response[0]
-            }).catch((err) => {
-                console.log(err);
-            });
+        // const getCordinates = geoCoder.geocode(address).then(
+        //     response => {
+        //         return response[0]
+        //     }).catch((err) => {
+        //         console.log(err);
+        //     });
 
         const getLatLong = async () => {
-            const latAndLong = await getCordinates
+            //const latAndLong = await getCordinates
 
             const supplier = await Supplier.create({
                 user: req.user._id,
@@ -47,8 +47,8 @@ const createSupplierProduct = asyncHandler(async (req, res) => {
                 address,
                 cropSelection,
                 storage,
-                longitude: latAndLong.longitude,
-                latitude: latAndLong.latitude,
+                //longitude: latAndLong.longitude,
+                //latitude: latAndLong.latitude,
                 image,
                 phonenumber,
                 description,

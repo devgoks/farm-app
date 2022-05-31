@@ -56,7 +56,7 @@ const PlaceOrder = ({ history }) => {
         <div style={{ marginTop: '100px' }}>
             <Container>
                 <Meta
-                    title="Agroic | Order"
+                    title="FarmConnect | Order"
                 />
                 <Row className="justify-content-md-center">
                     <Col xs={12} md={6}>
@@ -99,7 +99,7 @@ const PlaceOrder = ({ history }) => {
                                                                 {item.name}
                                                             </Col>
                                                             <Col md={4}>
-                                                                {`${item.qty} x RS. ${item.price} = RS. ${item.qty * item.price}`}
+                                                                {`${item.qty} x ₦ ${item.price} = ₦ ${item.qty * item.price}`}
                                                             </Col>
                                                         </Row>
                                                     </ListGroup.Item>
@@ -120,24 +120,24 @@ const PlaceOrder = ({ history }) => {
                                 <ListGroup.Item>
                                     <Row>
                                         <Col>Items</Col>
-                                        <Col>{`RS. ${cart.itemsPrice}`}</Col>
+                                        <Col>{`₦ ${cart.itemsPrice}`}</Col>
                                     </Row>
                                 </ListGroup.Item>
                                 <ListGroup.Item>
                                     <Row>
                                         <Col>Shipping</Col>
-                                        <Col>{`RS. ${cart.shippingPrice}`}</Col>
+                                        <Col>{`₦ ${cart.shippingPrice}`}</Col>
                                     </Row>
                                 </ListGroup.Item>
                                 <ListGroup.Item>
                                     <Row>
                                         <Col>Tax</Col>
-                                        <Col>{`RS. ${cart.taxPrice}`}</Col>
+                                        <Col>{`₦ ${cart.taxPrice}`}</Col>
                                     </Row>
                                 </ListGroup.Item><ListGroup.Item>
                                     <Row>
                                         <Col>Total</Col>
-                                        <Col>{`RS. ${cart.totalPrice}`}</Col>
+                                        <Col>{`₦ ${cart.totalPrice}`}</Col>
                                     </Row>
                                 </ListGroup.Item>
                                 <ListGroup.Item>

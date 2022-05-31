@@ -37,7 +37,7 @@ const LendMachineProduct = ({ history, match }) => {
     return (
         <div className="productScreen">
             <Meta
-                title="Agroic | Machine"
+                title="FarmConnect | Machine"
             />
             <Container>
                 <Link className="btn btn-go-back btn-dark" to="/farmers/lendMachines">GO BACK</Link>

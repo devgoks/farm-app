@@ -11,10 +11,10 @@ const OurServices = () => {
     return (
         <Container className="main" fluid>
             <h1 className="main-title">COMPREHENSIVE SERVICES</h1>
-            <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac nunc non arcu aliquet sollicitudin. Sed elementum placerat ex. Donec a lectus vel lectus faucibus mattis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac nunc non arcu aliquet sollicitudin. Sed elementum placerat ex. Donec a lectus vel lectus faucibus mattis
-            </p>
+            {/*<p className="description">*/}
+                {/*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac nunc non arcu aliquet sollicitudin. Sed elementum placerat ex. Donec a lectus vel lectus faucibus mattis.*/}
+                {/*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac nunc non arcu aliquet sollicitudin. Sed elementum placerat ex. Donec a lectus vel lectus faucibus mattis*/}
+            {/*</p>*/}
             <Container className="services">
                 <Row>
                     <Col md={3}>

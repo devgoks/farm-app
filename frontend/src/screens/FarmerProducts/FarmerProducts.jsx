@@ -58,7 +58,7 @@ const FarmerProduct = ({ history, match }) => {
     return (
         <div className="productScreen">
             <Meta
-                title="Agroic | Admin Farmer Review"
+                title="FarmConnect | Admin Farmer Review"
             />
             <Container>
                 <Link className="btn btn-go-back btn-dark" to="/admin/supplierproducts">GO BACK</Link>

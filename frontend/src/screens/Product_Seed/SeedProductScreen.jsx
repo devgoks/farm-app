@@ -69,7 +69,7 @@ const SeedProductScreen = ({ history, match }) => {
     return (
         <div className="productScreen">
             <Meta
-                title="Agroic | Seed"
+                title="FarmConnect | Seed"
             />
             <Container>
                 <Link className="btn btn-go-back btn-dark" to="/farmers/purchaseSeeds">GO BACK</Link>
@@ -105,7 +105,7 @@ const SeedProductScreen = ({ history, match }) => {
                                                 <ListGroup.Item>
                                                     <Row>
                                                         <Col>Price:</Col>
-                                                        <Col><strong>RS. {productSeed.price}</strong></Col>
+                                                        <Col><strong>₦{productSeed.price}</strong></Col>
                                                     </Row>
                                                 </ListGroup.Item>
                                                 <ListGroup.Item>

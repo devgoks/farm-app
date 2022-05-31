@@ -33,7 +33,7 @@ const Cart = ({ match, location, history }) => {
     return (
         <Container style={{ marginTop: '100px', marginBottom: '50px' }}>
             <Meta
-                title="Agroic | Cart"
+                title="FarmConnect | Cart"
             />
             <Row>
                 <Col md={8}>
@@ -54,7 +54,7 @@ const Cart = ({ match, location, history }) => {
                                                 <Col md={3}>
                                                     <Link to={`/farmers/purchaseSeeds/${item.seed}`}>{item.name}</Link>
                                                 </Col>
-                                                <Col md={2}>RS.{item.price}</Col>
+                                                <Col md={2}>₦{item.price}</Col>
                                                 <Col md={2}>
                                                     <Form.Control
                                                         as='select'
@@ -92,7 +92,7 @@ const Cart = ({ match, location, history }) => {
                         <ListGroup variant='flush'>
                             <ListGroup.Item>
                                 <h2>Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}) items</h2>
-                                RS.{cartItems
+                                ₦ {cartItems
                                     .reduce((acc, item) => acc + item.qty * item.price, 0)
                                     .toFixed(2)}
                             </ListGroup.Item>

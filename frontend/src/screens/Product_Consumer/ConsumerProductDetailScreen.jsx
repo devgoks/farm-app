@@ -37,7 +37,7 @@ const ConsumerProductDetailScreen = ({ history, match }) => {
     return (
         <div className="productScreen">
             <Meta
-                title="Agroic | Consumer Product"
+                title="FarmConnect | Consumer Product"
             />
             <Container>
                 <Link className="btn btn-go-back btn-dark" to="/consumer">GO BACK</Link>
@@ -77,7 +77,7 @@ const ConsumerProductDetailScreen = ({ history, match }) => {
                                                 <ListGroup.Item>
                                                     <Row>
                                                         <Col>Price:</Col>
-                                                        <Col><strong>RS. {consumerProduct.price}</strong></Col>
+                                                        <Col><strong>₦{consumerProduct.price}</strong></Col>
                                                     </Row>
                                                 </ListGroup.Item>
                                                 <ListGroup.Item>

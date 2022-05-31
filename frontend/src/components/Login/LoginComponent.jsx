@@ -38,17 +38,17 @@ const LoginComponent = ({ location, history }) => {
     return (
         <FormContainer>
             <Meta
-                title="Agroic | Sign In"
+                title="FarmConnect | Sign In"
             />
             <h1 style={{ marginTop: '120px' }}>Sign In</h1>
             { error && <Message variant='danger'>{error}</Message>}
             { loading && <Loader />}
             <Form onSubmit={submitHandler}>
                 <Form.Group controlId='email'>
-                    <Form.Label>Email Address / NIC <span style={{ color: 'red' }}>*</span></Form.Label>
+                    <Form.Label>Email Address<span style={{ color: 'red' }}>*</span></Form.Label>
                     <Form.Control
                         type="nic"
-                        placeholder="Enter email or NIC"
+                        placeholder="Enter email"
                         value={email}
                         required
                         onChange={(e) => setEmail(e.target.value)}

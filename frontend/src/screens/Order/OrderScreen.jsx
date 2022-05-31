@@ -84,7 +84,7 @@ const OrderScreen = ({ match }) => {
     return (
         <div>
             <Meta
-                title="Agroic | Order"
+                title="FarmConnect | Order"
             />
             {
                 loading
@@ -144,7 +144,7 @@ const OrderScreen = ({ match }) => {
                                                                                 {item.name}
                                                                             </Col>
                                                                             <Col md={4}>
-                                                                                {`${item.qty} x RS. ${item.price} = RS. ${item.qty * item.price}`}
+                                                                                {`${item.qty} x ₦ ${item.price} = ₦ ${item.qty * item.price}`}
                                                                             </Col>
                                                                         </Row>
                                                                     </ListGroup.Item>
@@ -165,24 +165,24 @@ const OrderScreen = ({ match }) => {
                                                 <ListGroup.Item>
                                                     <Row>
                                                         <Col>Total Price</Col>
-                                                        <Col>{`RS. ${(order.totalPrice - (order.taxPrice + order.shippingPrice).toFixed(2))}`}</Col>
+                                                        <Col>{`₦ ${(order.totalPrice - (order.taxPrice + order.shippingPrice).toFixed(2))}`}</Col>
                                                     </Row>
                                                 </ListGroup.Item>
                                                 <ListGroup.Item>
                                                     <Row>
                                                         <Col>Shipping</Col>
-                                                        <Col>{`RS. ${order.shippingPrice}`}</Col>
+                                                        <Col>{`₦ ${order.shippingPrice}`}</Col>
                                                     </Row>
                                                 </ListGroup.Item>
                                                 <ListGroup.Item>
                                                     <Row>
                                                         <Col>Tax</Col>
-                                                        <Col>{`RS. ${order.taxPrice}`}</Col>
+                                                        <Col>{`₦ ${order.taxPrice}`}</Col>
                                                     </Row>
                                                 </ListGroup.Item><ListGroup.Item>
                                                     <Row>
                                                         <Col>Total</Col>
-                                                        <Col>{`RS. ${order.totalPrice}`}</Col>
+                                                        <Col>{`₦ ${order.totalPrice}`}</Col>
                                                     </Row>
                                                 </ListGroup.Item>
                                                 {

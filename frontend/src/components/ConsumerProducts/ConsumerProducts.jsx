@@ -15,7 +15,7 @@ const ConsumerProducts = ({ _id, prod_name, image, price, avalaible_location, pr
                         </Card.Title>
                     </LinkContainer>
                     <Card.Text as="h5">
-                        Price: RS.{price} <br />Product Size: {prod_size}
+                        Price: ₦{price} <br />Product Size: {prod_size}
                     </Card.Text>
                     <Card.Text as="p">
                         Location: <span style={{fontWeight:'bold'}}>{avalaible_location}</span>

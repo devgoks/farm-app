@@ -35,7 +35,7 @@ const Farmer_ProductSeedScreen = () => {
 
         <div className="ProductSeedScreen">
             <Meta
-                title="Agroic | Farmer Seeds"
+                title="FarmConnect | Farmer Seeds"
             />
             <Container>
                 <h1 className="p-3" style={{ textAlign: 'center' }}>Latest Seeds</h1>

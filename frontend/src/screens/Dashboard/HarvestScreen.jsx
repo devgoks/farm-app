@@ -8,7 +8,7 @@ const HarvestScreen = () => {
     return (
         <div style={{ marginTop: "110px" }}>
             <Meta
-                title="Agroic | Admin Harvest"
+                title="FarmConnect | Admin Harvest"
             />
             <Container fluid>
                 <Row>

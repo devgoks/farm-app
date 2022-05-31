@@ -14,7 +14,7 @@ const FarmerScreen = () => {
     return (
         <div>
             <Meta
-                title="Agroic | Farmers"
+                title="FarmConnect | Farmers"
             />
             <Container className='farmerContainer'>
                 <h1 className='title'>FARMER</h1>
@@ -31,7 +31,7 @@ const FarmerScreen = () => {
                         </Card>
                         <Card border="primary" style={{ width: '25rem' }}>
                             <Card.Body>
-                                <Card.Title className="card-titile">Sell Your Producing Material through Us</Card.Title>
+                                <Card.Title className="card-titile">Sell Your Farm Produce</Card.Title>
                                 <LinkContainer to="/login?redirect=supplier">
                                     <Button className="btn-explore btn-md m-2">EXPLORE MORE</Button>
                                 </LinkContainer>
