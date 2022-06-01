@@ -41,7 +41,7 @@ jobs:
     needs: build
     environment:
       name: "Production"
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      url: $
 
     steps:
       - name: Download artifact from build job
@@ -55,7 +55,7 @@ jobs:
         with:
           app-name: "farmkonnect"
           slot-name: "Production"
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C66460EECBE74DAAB6434858E2A178F4 }}
+          publish-profile: $
           package: react.zip
 
       - name: Delete zip file
