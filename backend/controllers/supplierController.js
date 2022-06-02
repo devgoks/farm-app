@@ -175,28 +175,28 @@ const updateSupplierProductProfile = asyncHandler(async (req, res) => {
         product.description = req.body.description || product.description
         product.cropSelection = req.body.cropSelection || product.cropSelection
 
-        let options = {
-            provider: 'openstreetmap'
-        };
+        // let options = {
+        //     provider: 'openstreetmap'
+        // };
 
-        let geoCoder = nodeGeocoder(options);
+        // let geoCoder = nodeGeocoder(options);
+        //
+        // const getCordinates = geoCoder.geocode(product.address).then(
+        //     response => {
+        //         return response[0]
+        //     }).catch((err) => {
+        //         console.log(err);
+        //     });
 
-        const getCordinates = geoCoder.geocode(product.address).then(
-            response => {
-                return response[0]
-            }).catch((err) => {
-                console.log(err);
-            });
-
-        const getLatLong = async () => {
-            const latAndLong = await getCordinates
-
-            product.longitude = req.body.longitude || latAndLong.longitude
-            product.latitude = req.body.latitude || latAndLong.latitude
-
-        }
-
-        getLatLong()
+        // const getLatLong = async () => {
+        //     const latAndLong = await getCordinates
+        //
+        //     product.longitude = req.body.longitude || latAndLong.longitude
+        //     product.latitude = req.body.latitude || latAndLong.latitude
+        //
+        // }
+        //
+        // getLatLong()
 
         const updatedproduct = await product.save()
 

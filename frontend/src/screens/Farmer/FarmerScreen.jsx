@@ -18,7 +18,7 @@ const FarmerScreen = () => {
             />
             <Container className='farmerContainer'>
                 <h1 className='title'>FARMER</h1>
-                <h4 className="farmer-title">If you are a farmer then you are at perfect platfrom from where you can order all of your farming related products and you can sell your production also.</h4>
+                <h4 className="farmer-title">If you are a farmer then you are at perfect platfrom from where you can order all of your farming related products and you can sell your products.</h4>
                 <Row className="row-one justify">
                     <CardDeck>
                         <Card border="primary" style={{ width: '25rem' }}>
