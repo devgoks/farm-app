@@ -21,6 +21,8 @@ import {
     CONSUMER_CREATE_REVIEW_FAIL
 } from './../constants/productConstants'
 
+import {logout} from './userActions'
+
 export const listConsumerProducts = () => async (dispatch) => {
     try {
         dispatch({ type: CONSUMER_PRODUCT_LIST_REQUEST })
