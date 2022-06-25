@@ -21,7 +21,9 @@ import {
     getConsumerProductById,
     deleteConsumerProduct,
     createConsumer,
-    updateConsumer
+    updateConsumer,
+    createConsumerReview,
+    getConsumerProductsFilter
 } from './../controllers/consumerProductControlller.js'
 import { protect, admin } from './../middleware/authMiddleware.js'
 
@@ -57,9 +59,17 @@ router
     .post(protect, admin, createConsumer)
 
 router
+    .route('/consumer/filter')
+    .post(getConsumerProductsFilter)
+
+router
     .route('/consumer/:id')
     .get(getConsumerProductById)
     .delete(protect, admin, deleteConsumerProduct)
     .put(protect, admin, updateConsumer)
+
+router
+    .route('/consumer/:id/reviews')
+    .post(protect, createConsumerReview)
 
 export default router

@@ -11,6 +11,14 @@ const getConsumerProducts = asyncHandler(async (req, res) => {
     res.json(consumerProducts);
 })
 
+// @desc    Filter by location and product name all products
+// @rout    POST /consumer/filter
+// @access  public
+const getConsumerProductsFilter = asyncHandler(async (req, res) => {
+    const consumerProducts = await ConsumerProducts.find({prod_name: req.body.prod_name, avalaible_location: req.body.avalaible_location})
+    res.json(consumerProducts);
+})
+
 // @desc    Fetch Consumer Product by id
 // @rout    GET /consumer/:id
 // @access  public
@@ -85,10 +93,51 @@ const updateConsumer = asyncHandler(async (req, res) => {
     }
 })
 
+
+// @desc    Consumer Review
+// @rout    POST /consumer/:id/review
+// @access  private/ Admin
+const createConsumerReview = asyncHandler(async (req, res) => {
+    const { rating, comment } = req.body
+
+    const consumerProducts = await ConsumerProducts.findById(req.params.id)
+
+    if (ConsumerProducts) {
+        const alreadyReviewed = consumerProducts.reviews.find(r => r.user.toString() === req.user._id.toString())
+        if (alreadyReviewed) {
+            res.status(400)
+            throw new Error('Product already reviewed')
+        }
+
+        const review = {
+            name: req.user.name,
+            rating: Number(rating),
+            comment,
+            user: req.user._id
+        }
+
+        consumerProducts.reviews.push(review)
+
+        consumerProducts.numReviews = consumerProducts.reviews.length
+
+        consumerProducts.rating = consumerProducts.reviews.reduce((acc, item) => item.rating + acc, 0) / consumerProducts.reviews.length
+
+        await consumerProducts.save()
+
+        res.status(201).json({ message: 'Review added' })
+
+    } else {
+        res.status(401)
+        throw new Error('Product not found')
+    }
+})
+
 export {
     getConsumerProducts,
     getConsumerProductById,
     deleteConsumerProduct,
     createConsumer,
-    updateConsumer
+    updateConsumer,
+    createConsumerReview,
+    getConsumerProductsFilter
 }

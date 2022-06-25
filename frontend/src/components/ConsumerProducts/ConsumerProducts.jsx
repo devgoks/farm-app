@@ -2,8 +2,9 @@ import React from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Card, Col, Button } from 'react-bootstrap';
 import './ConsumerProduts.css'
+import Rating from '../Rating/Rating';
 
-const ConsumerProducts = ({ _id, prod_name, image, price, avalaible_location, prod_size }) => {
+const ConsumerProducts = ({ _id, prod_name, image, price, avalaible_location, prod_size, reviews, rating }) => {
     return (
         <Col sm={12} md={6} lg={4}>
             <Card className="my-3 p-3 ">
@@ -14,6 +15,12 @@ const ConsumerProducts = ({ _id, prod_name, image, price, avalaible_location, pr
                             {prod_name}
                         </Card.Title>
                     </LinkContainer>
+                    <Card.Text>
+                        <Rating
+                            value={rating}
+                            text={`${reviews} reviews`}
+                        />
+                    </Card.Text>
                     <Card.Text as="h5">
                         Price: ₦{price} <br />Product Size: {prod_size}
                     </Card.Text>

@@ -16,6 +16,9 @@ import {
     CONSUMER_UPDATE_SUCCESS,
     CONSUMER_UPDATE_FAIL,
     CONSUMER_UPDATE_RESET,
+    CONSUMER_CREATE_REVIEW_REQUEST,
+    CONSUMER_CREATE_REVIEW_SUCCESS,
+    CONSUMER_CREATE_REVIEW_FAIL
 } from './../constants/productConstants'
 
 export const listConsumerProducts = () => async (dispatch) => {
@@ -146,6 +149,43 @@ export const updateConsumer = (consumer) => async (dispatch, getState) => {
                 error.response && error.response.data.message
                     ? error.response.data.message
                     : error.message
+        })
+    }
+}
+
+export const createConsumerReview = (productId, review) => async (dispatch, getState) => {
+    try {
+        dispatch({
+            type: CONSUMER_CREATE_REVIEW_REQUEST,
+        })
+
+        const {
+            userLogin: { userInfo },
+        } = getState()
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${userInfo.token}`,
+            },
+        }
+
+        await axios.post(`/api/consumer/${productId}/reviews`, review, config)
+
+        dispatch({
+            type: CONSUMER_CREATE_REVIEW_SUCCESS,
+        })
+    } catch (error) {
+        const message =
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message
+        if (message === 'Not authorized, token failed') {
+            dispatch(logout())
+        }
+        dispatch({
+            type: CONSUMER_CREATE_REVIEW_FAIL,
+            payload: message,
         })
     }
 }

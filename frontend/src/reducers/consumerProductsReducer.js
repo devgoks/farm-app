@@ -15,7 +15,11 @@ import {
     CONSUMER_UPDATE_REQUEST,
     CONSUMER_UPDATE_SUCCESS,
     CONSUMER_UPDATE_FAIL,
-    CONSUMER_UPDATE_RESET
+    CONSUMER_UPDATE_RESET,
+    CONSUMER_CREATE_REVIEW_REQUEST,
+    CONSUMER_CREATE_REVIEW_SUCCESS,
+    CONSUMER_CREATE_REVIEW_FAIL,
+    CONSUMER_CREATE_REVIEW_RESET
 } from '../constants/productConstants'
 
 export const consumerProductListReducer = (state = { consumerProducts: [] }, action) => {
@@ -84,6 +88,21 @@ export const consumerUpdateReducer = (state = { consumer: {} }, action) => {
             return {
                 consumer: {}
             }
+        default:
+            return state
+    }
+}
+
+export const consumerReviewCreateReducer = (state = {}, action) => {
+    switch (action.type) {
+        case CONSUMER_CREATE_REVIEW_REQUEST:
+            return { loading: true }
+        case CONSUMER_CREATE_REVIEW_SUCCESS:
+            return { loading: false, success: true }
+        case CONSUMER_CREATE_REVIEW_FAIL:
+            return { loading: false, error: action.payload }
+        case CONSUMER_CREATE_REVIEW_RESET:
+            return {}
         default:
             return state
     }

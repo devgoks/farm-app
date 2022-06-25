@@ -32,7 +32,8 @@ import {
     consumerProductDetailsReducer,
     consumerProductDeleteReducer,
     consumerCreateReducer,
-    consumerUpdateReducer
+    consumerUpdateReducer,
+    consumerReviewCreateReducer
 } from './reducers/consumerProductsReducer'
 import {
     orderCreateReducer,
@@ -72,6 +73,7 @@ const reducer = combineReducers({
     consumerProductDelete: consumerProductDeleteReducer,
     consumerCreate: consumerCreateReducer,
     consumerUpdate: consumerUpdateReducer,
+    consumerReviewCreate: consumerReviewCreateReducer,
     orderDeliver: orderDeliverReducer,
 
     productCreate: productCreateReducer,

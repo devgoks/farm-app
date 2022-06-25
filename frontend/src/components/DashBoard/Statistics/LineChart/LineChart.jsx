@@ -6,7 +6,7 @@ import Loader from './../../../../components/Loader/Loader'
 import { listUsers } from './../../../../actions/userActions'
 
 const data = {
-    labels: ['December', 'January'],
+    labels: ['April', 'May','June'],
     datasets: [
         {
             label: 'Users of Months',
@@ -27,7 +27,7 @@ const data = {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [1, 4, 0, 8]
+            data: [1, 2, 4]
         }
     ]
 };

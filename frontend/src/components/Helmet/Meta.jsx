@@ -13,8 +13,8 @@ const Meta = ({ title, description, keywords }) => {
 
 Meta.defaultProps = {
     title: 'Welcome To FarmConnect',
-    description: 'Agriclutural website by The Department of Agriculture (DoA) of Sri Lanka along with the Keels ',
-    keywords: 'farmers, argio, department of agriculture, agricultural science'
+    description: 'Agriclutural website by farm connect',
+    keywords: 'farmers, farm connect, department of agriculture, agricultural science'
 }
 
 export default Meta
